@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package mx.itson.proyectoappweb.modelo.idao;
 
-/**
- *
- * @author User
- */
+import java.util.List;
+import mx.itson.proyectoappweb.modelo.dominio.Credencial;
+
 public interface ICredencialDAO {
-    
+
+    Credencial crearCredencial(Credencial credencial);
+
+    boolean actualizarCredencial(Credencial credencial);
+
+    Credencial consultarCredencialID(Long id);
+
+    boolean eliminarCredencial(Credencial credencial);
+
+    List<Credencial> obtenerTodosCredencial();
+
 }

@@ -1,6 +1,6 @@
-
 package mx.itson.proyectoappweb.modelo.idao.impl;
 
+import java.util.List;
 import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -8,32 +8,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceException;
 import mx.itson.proyectoappweb.controlador.IConexionBD;
-import mx.itson.proyectoappweb.modelo.dominio.Credencial;
-import mx.itson.proyectoappweb.modelo.idao.ICredencialDAO;
+import mx.itson.proyectoappweb.modelo.dominio.Destinatario;
+import mx.itson.proyectoappweb.modelo.idao.IDestinatarioDAO;
 
-public class CredencialDAO implements ICredencialDAO{
+public class DestinatarioDAO implements IDestinatarioDAO{
     
     private EntityManagerFactory entityManagerFactory;
     
-    public CredencialDAO(IConexionBD conexionBD) throws SQLException {
+    public DestinatarioDAO(IConexionBD conexionBD) throws SQLException {
         this.entityManagerFactory = conexionBD.useConnection();
     }
 
     @Override
-    public Credencial crearCredencial(Credencial credencial) {
+    public Destinatario crearDestinatario(Destinatario destinatario) {
         
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(credencial);
+            entityManager.persist(destinatario);
             entityManager.getTransaction().commit();
-            return credencial;
+            return destinatario;
         } catch (PersistenceException e) {
-            if (e.getMessage().contains("Duplicate entry")) {
-                throw new PersistenceException("Error al crear el usuario: ya existe un usuario con el mismo correo", e);
-            }
             entityManager.getTransaction().rollback();
-            throw new PersistenceException("Error al crear la credencial", e);
+            throw new PersistenceException("Error al crear el destinatario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -43,17 +40,17 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public boolean actualizarCredencial(Credencial credencial) {
+    public boolean actualizarDestinatario(Destinatario destinatario) {
         
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(credencial);
+            entityManager.merge(destinatario);
             entityManager.getTransaction().commit();
             return true;
         } catch (PersistenceException e) {
             entityManager.getTransaction().rollback();
-            throw new PersistenceException("Error al actualizar la credencial", e);
+            throw new PersistenceException("Error al actualizar el destinatario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -63,15 +60,15 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public Credencial consultarCredencialID(Long id) {
+    public Destinatario consultarDestinatarioID(Long id) {
         
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
-            Credencial credencial = entityManager.find(Credencial.class, id);
-            if (credencial == null) {
-                throw new EntityNotFoundException("Credencial no encontrada con ID: " + id);
+            Destinatario destintario = entityManager.find(Destinatario.class, id);
+            if (destintario == null) {
+                throw new EntityNotFoundException("Destinatario no encontrado con ID: " + id);
             }
-            return credencial;
+            return destintario;
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -81,17 +78,17 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public boolean eliminarCredencial(Credencial credencial) {
+    public boolean eliminarDestinatario(Destinatario destinatario) {
         
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            entityManager.remove(entityManager.contains(credencial) ? credencial : entityManager.merge(credencial));
+            entityManager.remove(entityManager.contains(destinatario) ? destinatario : entityManager.merge(destinatario));
             entityManager.getTransaction().commit();
             return true;
         } catch (PersistenceException e) {
             entityManager.getTransaction().rollback();
-            throw new PersistenceException("Error al eliminar la credencial", e);
+            throw new PersistenceException("Error al eliminar el destinatario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -101,18 +98,19 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public List<Credencial> obtenerTodosCredencial() {
+    public List<Destinatario> obtenerTodosDestinatario() {
         
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
-            return entityManager.createQuery("SELECT c FROM Credencial c", Credencial.class).getResultList();
+            return entityManager.createQuery("SELECT d FROM Destinatario d", Destinatario.class).getResultList();
         } catch (PersistenceException e) {
-            throw new PersistenceException("Error al obtener todas las credenciales", e);
+            throw new PersistenceException("Error al obtener todas los destinatarios", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
             }
         }
-    }
         
     }
+    
+}

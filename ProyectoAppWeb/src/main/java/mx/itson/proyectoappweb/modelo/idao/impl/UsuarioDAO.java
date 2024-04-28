@@ -1,4 +1,3 @@
-
 package mx.itson.proyectoappweb.modelo.idao.impl;
 
 import java.sql.SQLException;
@@ -8,32 +7,30 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceException;
 import mx.itson.proyectoappweb.controlador.IConexionBD;
-import mx.itson.proyectoappweb.modelo.dominio.Credencial;
-import mx.itson.proyectoappweb.modelo.idao.ICredencialDAO;
+import mx.itson.proyectoappweb.modelo.dominio.Usuario;
+import mx.itson.proyectoappweb.modelo.idao.IUsuarioDAO;
 
-public class CredencialDAO implements ICredencialDAO{
+public class UsuarioDAO implements IUsuarioDAO{
     
     private EntityManagerFactory entityManagerFactory;
-    
-    public CredencialDAO(IConexionBD conexionBD) throws SQLException {
+
+    public UsuarioDAO(IConexionBD conexionBD) throws SQLException {
         this.entityManagerFactory = conexionBD.useConnection();
     }
+    
 
     @Override
-    public Credencial crearCredencial(Credencial credencial) {
+    public Usuario crearUsuario(Usuario usuario) {
         
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(credencial);
+            entityManager.persist(usuario);
             entityManager.getTransaction().commit();
-            return credencial;
+            return usuario;
         } catch (PersistenceException e) {
-            if (e.getMessage().contains("Duplicate entry")) {
-                throw new PersistenceException("Error al crear el usuario: ya existe un usuario con el mismo correo", e);
-            }
             entityManager.getTransaction().rollback();
-            throw new PersistenceException("Error al crear la credencial", e);
+            throw new PersistenceException("Error al crear el usuario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -43,17 +40,17 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public boolean actualizarCredencial(Credencial credencial) {
+    public boolean actualizarUsuario(Usuario usuario) {
         
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(credencial);
+            entityManager.merge(usuario);
             entityManager.getTransaction().commit();
             return true;
         } catch (PersistenceException e) {
             entityManager.getTransaction().rollback();
-            throw new PersistenceException("Error al actualizar la credencial", e);
+            throw new PersistenceException("Error al actualizar el usuario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -63,15 +60,15 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public Credencial consultarCredencialID(Long id) {
+    public Usuario consultarUsuarioID(Long id) {
         
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
-            Credencial credencial = entityManager.find(Credencial.class, id);
-            if (credencial == null) {
-                throw new EntityNotFoundException("Credencial no encontrada con ID: " + id);
+            Usuario usuario = entityManager.find(Usuario.class, id);
+            if (usuario == null) {
+                throw new EntityNotFoundException("Usuario no encontrado con ID: " + id);
             }
-            return credencial;
+            return usuario;
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -81,17 +78,17 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public boolean eliminarCredencial(Credencial credencial) {
+    public boolean eliminarUsuario(Usuario usuario) {
         
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            entityManager.remove(entityManager.contains(credencial) ? credencial : entityManager.merge(credencial));
+            entityManager.remove(entityManager.contains(usuario) ? usuario : entityManager.merge(usuario));
             entityManager.getTransaction().commit();
             return true;
         } catch (PersistenceException e) {
             entityManager.getTransaction().rollback();
-            throw new PersistenceException("Error al eliminar la credencial", e);
+            throw new PersistenceException("Error al eliminar el usuario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -101,18 +98,19 @@ public class CredencialDAO implements ICredencialDAO{
     }
 
     @Override
-    public List<Credencial> obtenerTodosCredencial() {
+    public List<Usuario> obtenerTodosUsuario() {
         
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
-            return entityManager.createQuery("SELECT c FROM Credencial c", Credencial.class).getResultList();
+            return entityManager.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
         } catch (PersistenceException e) {
-            throw new PersistenceException("Error al obtener todas las credenciales", e);
+            throw new PersistenceException("Error al obtener todas los usuarios", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
             }
         }
-    }
         
     }
+    
+}
