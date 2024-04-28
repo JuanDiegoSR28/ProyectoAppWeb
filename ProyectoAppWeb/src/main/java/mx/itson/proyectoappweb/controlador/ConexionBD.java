@@ -1,9 +1,7 @@
 package mx.itson.proyectoappweb.controlador;
 
-import java.sql.SQLException;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
+
+
 
 import java.sql.SQLException;
 import javax.persistence.EntityManagerFactory;

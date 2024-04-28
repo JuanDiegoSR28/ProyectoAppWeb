@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-  <persistence-unit name="persistencia" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Carrito</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Categoria</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Credencial</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Destinatario</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Direccion</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Estilo</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Imagen</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Producto</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Producto_Talla</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Talla</class>
-    <class>mx.itson.proyectoappweb.modelo.dominio.Usuario</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/botasdb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="daniel2002"/>
-      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
-    </properties>
-  </persistence-unit>
+    <persistence-unit name="persistencia" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!-- <non-jta-data-source>botasdb</non-jta-data-source> -->
+        <class>mx.itson.proyectoappweb.modelo.dominio.Categoria</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Destinatario</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Direccion</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Imagen</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Carrito</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Credencial</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Estilo</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Producto</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Producto_Talla</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Talla</class>
+        <class>mx.itson.proyectoappweb.modelo.dominio.Usuario</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/botasdb?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;createDatabaseIfNotExist=true"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value="daniel2002"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+    </persistence-unit>
 </persistence>

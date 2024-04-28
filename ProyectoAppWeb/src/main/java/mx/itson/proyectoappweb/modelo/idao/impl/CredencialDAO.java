@@ -1,4 +1,3 @@
-
 package mx.itson.proyectoappweb.modelo.idao.impl;
 
 import java.sql.SQLException;
@@ -11,17 +10,17 @@ import mx.itson.proyectoappweb.controlador.IConexionBD;
 import mx.itson.proyectoappweb.modelo.dominio.Credencial;
 import mx.itson.proyectoappweb.modelo.idao.ICredencialDAO;
 
-public class CredencialDAO implements ICredencialDAO{
-    
+public class CredencialDAO implements ICredencialDAO {
+
     private EntityManagerFactory entityManagerFactory;
-    
+
     public CredencialDAO(IConexionBD conexionBD) throws SQLException {
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 
     @Override
     public Credencial crearCredencial(Credencial credencial) {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
@@ -30,21 +29,22 @@ public class CredencialDAO implements ICredencialDAO{
             return credencial;
         } catch (PersistenceException e) {
             if (e.getMessage().contains("Duplicate entry")) {
+                entityManager.getTransaction().rollback();
                 throw new PersistenceException("Error al crear el usuario: ya existe un usuario con el mismo correo", e);
             }
-            entityManager.getTransaction().rollback();
+
             throw new PersistenceException("Error al crear la credencial", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public boolean actualizarCredencial(Credencial credencial) {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
@@ -59,12 +59,12 @@ public class CredencialDAO implements ICredencialDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public Credencial consultarCredencialID(Long id) {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             Credencial credencial = entityManager.find(Credencial.class, id);
@@ -77,12 +77,12 @@ public class CredencialDAO implements ICredencialDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public boolean eliminarCredencial(Credencial credencial) {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
@@ -97,12 +97,12 @@ public class CredencialDAO implements ICredencialDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public List<Credencial> obtenerTodosCredencial() {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             return entityManager.createQuery("SELECT c FROM Credencial c", Credencial.class).getResultList();
@@ -114,5 +114,5 @@ public class CredencialDAO implements ICredencialDAO{
             }
         }
     }
-        
-    }
+
+}

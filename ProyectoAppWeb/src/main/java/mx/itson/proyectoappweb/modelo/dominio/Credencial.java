@@ -1,5 +1,6 @@
 package mx.itson.proyectoappweb.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "credenciales")
-public class Credencial {
+public class Credencial implements Serializable {
 
     //Atributos
     @Id
