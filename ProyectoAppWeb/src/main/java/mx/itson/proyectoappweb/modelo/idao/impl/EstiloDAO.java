@@ -20,7 +20,7 @@ public class EstiloDAO implements IEstiloDAO {
     private EntityManagerFactory entityManagerFactory;
 
     public EstiloDAO(IConexionBD conexionBD) throws SQLException {
-        this.entityManagerFactory = conexionBD.useConnectionMySQL();
+        this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 
     @Override

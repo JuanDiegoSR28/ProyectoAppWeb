@@ -15,7 +15,7 @@ public class UsuarioDAO implements IUsuarioDAO{
     private EntityManagerFactory entityManagerFactory;
 
     public UsuarioDAO(IConexionBD conexionBD) throws SQLException {
-        this.entityManagerFactory = conexionBD.useConnection();
+        this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
     
 

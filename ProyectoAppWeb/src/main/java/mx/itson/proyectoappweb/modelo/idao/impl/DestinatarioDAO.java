@@ -16,7 +16,7 @@ public class DestinatarioDAO implements IDestinatarioDAO{
     private EntityManagerFactory entityManagerFactory;
     
     public DestinatarioDAO(IConexionBD conexionBD) throws SQLException {
-        this.entityManagerFactory = conexionBD.useConnection();
+        this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 
     @Override

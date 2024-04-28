@@ -1,6 +1,5 @@
 package mx.itson.proyectoappweb.controlador;
 
-
 import java.sql.SQLException;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,7 +14,7 @@ public class ConexionBD implements IConexionBD {
 
     private static EntityManagerFactory factory;
 
-    public EntityManagerFactory useConnection() throws SQLException {
+    public EntityManagerFactory useConnectionMysql() throws SQLException {
 
         try {
             if (factory == null || !factory.isOpen()) {

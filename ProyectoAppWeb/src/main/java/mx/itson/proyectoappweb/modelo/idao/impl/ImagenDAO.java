@@ -19,7 +19,7 @@ public class ImagenDAO implements IImagenDAO {
     private EntityManagerFactory entityManagerFactory;
 
     public ImagenDAO(IConexionBD conexionBD) throws SQLException {
-        this.entityManagerFactory = conexionBD.useConnectionMySQL();
+        this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 
     @Override
