@@ -22,3 +22,17 @@
 127.0.0.1 - root [28/Apr/2024:00:43:02 -0700] "GET /manager/text/start?path=/ProyectoAppWeb HTTP/1.1" 200 84
 0:0:0:0:0:0:0:1 - - [28/Apr/2024:00:43:03 -0700] "GET /ProyectoAppWeb HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [28/Apr/2024:00:43:03 -0700] "GET /ProyectoAppWeb/ HTTP/1.1" 200 227
+127.0.0.1 - - [28/Apr/2024:01:08:13 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:13 -0700] "GET /manager/text/ HTTP/1.1" 200 44
+127.0.0.1 - - [28/Apr/2024:01:08:13 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:13 -0700] "GET /manager/text/ HTTP/1.1" 200 44
+127.0.0.1 - - [28/Apr/2024:01:08:13 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:13 -0700] "GET /manager/text/ HTTP/1.1" 200 44
+127.0.0.1 - - [28/Apr/2024:01:08:38 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:38 -0700] "GET /manager/text/ HTTP/1.1" 200 44
+127.0.0.1 - - [28/Apr/2024:01:08:38 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:38 -0700] "GET /manager/text/ HTTP/1.1" 200 44
+127.0.0.1 - - [28/Apr/2024:01:08:38 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:38 -0700] "GET /manager/text/ HTTP/1.1" 200 44
+127.0.0.1 - - [28/Apr/2024:01:08:38 -0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [28/Apr/2024:01:08:38 -0700] "GET /manager/text/ HTTP/1.1" 200 44
