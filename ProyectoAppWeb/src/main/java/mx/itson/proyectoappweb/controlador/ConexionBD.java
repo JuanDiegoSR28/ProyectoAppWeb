@@ -15,7 +15,6 @@ public class ConexionBD implements IConexionBD {
     private static EntityManagerFactory factory;
 
     public EntityManagerFactory useConnectionMysql() throws SQLException {
-
         try {
             if (factory == null || !factory.isOpen()) {
                 factory = Persistence.createEntityManagerFactory("persistencia");
