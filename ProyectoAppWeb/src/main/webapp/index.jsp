@@ -279,7 +279,7 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_jsp/assets/images/botas03.jpg" alt="">
+                                    <img src="assets/images/botas03.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas para Baile Hombre</h4>
