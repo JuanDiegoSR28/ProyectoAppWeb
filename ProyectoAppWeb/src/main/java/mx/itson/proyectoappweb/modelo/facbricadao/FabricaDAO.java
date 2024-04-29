@@ -24,12 +24,7 @@ public class FabricaDAO implements IFabricaDAO {
 
     @Override
     public ITallaDAO crearTallaDAO() {
-        try {
+
             return new TallaDAO(conexionBD);
-        } catch (SQLException ex) {
-            System.err.println("Error al crear TallaDAO: " + ex.getMessage());
-            Logger.getLogger(FabricaDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
     }
 }

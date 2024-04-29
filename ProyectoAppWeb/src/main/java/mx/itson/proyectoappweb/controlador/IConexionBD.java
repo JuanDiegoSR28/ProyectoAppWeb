@@ -5,5 +5,5 @@ import javax.persistence.EntityManagerFactory;
 
 public interface IConexionBD {
 
-    EntityManagerFactory useConnectionMysql() throws SQLException;
+    EntityManagerFactory useConnectionMysql() ;
 }

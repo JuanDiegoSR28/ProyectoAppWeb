@@ -19,7 +19,7 @@ public class CarritoDAO implements ICarritoDAO {
 
     private EntityManagerFactory entityManagerFactory;
 
-    public CarritoDAO(IConexionBD conexionBD) throws SQLException {
+    public CarritoDAO(IConexionBD conexionBD) {
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 
