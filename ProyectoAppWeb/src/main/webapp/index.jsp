@@ -4,9 +4,9 @@
     Author     : User
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="es">
+<%@page contentType="text/jsp" pageEncoding="UTF-8"%>
+<!DOCTYPE jsp>
+<jsp lang="es">
 
   <head>
 
@@ -16,7 +16,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Hexashop Ecommerce HTML CSS Template</title>
+    <title>Hexashop Ecommerce jsp CSS Template</title>
 
 
     <!-- Additional CSS Files -->
@@ -59,7 +59,7 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="index.jsp" class="logo">
                             <img src="assets/images/logo BotasJusaino.png" alt=""/>
                         </a>
                         <!-- ***** Logo End ***** -->
@@ -73,10 +73,10 @@ https://templatemo.com/tm-571-hexashop
                             <li class="submenu">
                                 <a href="javascript:;">Más</a>
                                 <ul>
-                                    <li><a href="about.html">Conócenos</a></li>
-                                    <li><a href="products.html">Productos</a></li>
-                                    <!--<li><a href="single-product.html">Producto a Detalle</a></li>-->
-                                    <li><a href="contact.html">Contáctanos</a></li>
+                                    <li><a href="about.jsp">Conócenos</a></li>
+                                    <li><a href="products.jsp">Productos</a></li>
+                                    <!--<li><a href="single-product.jsp">Producto a Detalle</a></li>-->
+                                    <li><a href="contact.jsp">Contáctanos</a></li>
                                 </ul>
                             </li>
 
@@ -124,7 +124,7 @@ https://templatemo.com/tm-571-hexashop
                                     <a href="#">¡Compra ya!</a>
                                 </div>
                             </div>
-                            <img src="/public_html/assets/images/coverBotasJusaino.jpg" alt="">
+                            <img src="/public_jsp/assets/images/coverBotasJusaino.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -240,12 +240,12 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_html/assets/images/botas01.jpg" alt="">
+                                    <img src="/public_jsp/assets/images/botas01.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas para Hombre</h4>
@@ -257,12 +257,12 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_html/assets/images/botas02.jpg" alt="">
+                                    <img src="/public_jsp/assets/images/botas02.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas para Baile</h4>
@@ -274,12 +274,12 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_html/assets/images/botas03.jpg" alt="">
+                                    <img src="/public_jsp/assets/images/botas03.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas para Baile Hombre</h4>
@@ -291,9 +291,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-01.jpg" alt="">
@@ -333,12 +333,12 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_html/assets/images/botas05.jpg" alt="">
+                                    <img src="/public_jsp/assets/images/botas05.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas Para Mujer</h4>
@@ -349,12 +349,12 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_html/assets/images/botas04.jpg" alt="">
+                                    <img src="/public_jsp/assets/images/botas04.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas de Baile para Mujeres</h4>
@@ -366,9 +366,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-03.jpg" alt="">
@@ -384,9 +384,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-01.jpg" alt="">
@@ -426,9 +426,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-01.jpg" alt="">
@@ -442,9 +442,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-02.jpg" alt="">
@@ -458,9 +458,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-03.jpg" alt="">
@@ -474,9 +474,9 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-01.jpg" alt="">
@@ -501,14 +501,14 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-6">
                     <div class="left-content">
                         <h2>Explore Our Products</h2>
-                        <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
+                        <span>You are allowed to use this HexaShop jsp CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
                         <div class="quote">
                             <i class="fa fa-quote-left"></i><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
                         </div>
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                         <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                         <div class="main-border-button">
-                            <a href="products.html">Discover More</a>
+                            <a href="products.jsp">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -737,4 +737,4 @@ https://templatemo.com/tm-571-hexashop
     </script>
 
   </body>
-</html>
+</jsp>
