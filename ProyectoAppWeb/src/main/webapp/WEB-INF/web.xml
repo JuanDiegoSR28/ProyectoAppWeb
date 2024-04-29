@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <filter>
+        <filter-name>FiltroLogueo</filter-name>
+        <filter-class>mx.itson.proyectoappweb.filtro.FiltroLogueo</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FiltroLogueo</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>SvrRegister</servlet-name>
-        <servlet-class>mx.itson.proyectoappweb.servlet.SvrRegister</servlet-class>
+        <servlet-class>mx.itson.proyectoappweb.servlet.SrvRegister</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SvrRegister</servlet-name>

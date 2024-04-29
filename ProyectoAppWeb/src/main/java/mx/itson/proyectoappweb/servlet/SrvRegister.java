@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Daniel Alameda
  */
-public class SvrRegister extends HttpServlet {
+public class SrvRegister extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
