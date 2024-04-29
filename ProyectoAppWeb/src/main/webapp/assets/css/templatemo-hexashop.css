@@ -838,12 +838,14 @@ Men
 }
 
 #men .section-heading {
+  text-align: center;
   margin-bottom: 60px;
+  margin-top: 80px;
 }
 
 #men .item .down-content {
-  padding-top: 30px;
   position: relative;
+  top: 50px;
   z-index: 3;
   background-color: #fff;
 }
@@ -860,6 +862,7 @@ Men
   color: #a1a1a1;
   font-weight: 500;
   display: block;
+  margin-bottom: 80px;
 }
 
 #men .item .down-content ul.stars {

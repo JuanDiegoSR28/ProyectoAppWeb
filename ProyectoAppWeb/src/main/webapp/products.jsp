@@ -16,7 +16,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Listado de productos</title>
+    <title>Botas Jusaino - Productos</title>
 
 
     <!-- Additional CSS Files -->
@@ -59,13 +59,13 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="index.jsp" class="logo">
                             <img src="assets/images/logo BotasJusaino.png" alt=""/>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
+                            <li class="scroll-to-section"><a href="index.jsp" class="active">Inicio</a></li>
                             <li class="scroll-to-section"><a href="#men">Hombres</a></li>
                             <li class="scroll-to-section"><a href="#women">Mujeres</a></li>
                             <li class="scroll-to-section"><a href="#kids">Niños</a></li>
@@ -73,10 +73,11 @@ https://templatemo.com/tm-571-hexashop
                             <li class="submenu">
                                 <a href="javascript:;">Más</a>
                                 <ul>
-                                    <li><a href="about.html">Conócenos</a></li>
-                                    <li><a href="products.html">Productos</a></li>
+                                    <li><a href="about.jsp">Conócenos</a></li>
+                                    <li><a href="products.jsp">Productos</a></li>
                                     <!--<li><a href="single-product.html">Producto a Detalle</a></li>-->
-                                    <li><a href="contact.html">Contáctanos</a></li>
+                                    <li><a href="contact.jsp">Contáctanos</a></li>
+                                    <li><a href="productRegister.jsp">Registrar producto</a></li>
                                 </ul>
                             </li>
 
@@ -97,7 +98,7 @@ https://templatemo.com/tm-571-hexashop
                         -->
                             <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                             
-                            <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                            <li><a href="search.jsp"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -286,12 +287,12 @@ https://templatemo.com/tm-571-hexashop
                         <ul>
                             <li><a href="#">Ciudad Obregón, Sonora, MX</a></li>
                             <li><a href="#">jusainobotas@hotmail.com</a></li>
-                            <li><a href="#">010-020-0340</a></li>
+                            <li><a href="#">644 279 7185</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <h4>Categorias de compras</h4>
+                    <h4>Categorías de compras</h4>
                     <ul>
                         <li><a href="#">Hombre</a></li>
                         <li><a href="#">Mujer</a></li>
@@ -304,6 +305,7 @@ https://templatemo.com/tm-571-hexashop
                         <li><a href="index.jsp">Inicio</a></li>
                         <li><a href="about.jsp">Conócenos</a></li>
                         <li><a href="contact.jsp">Contactanos</a></li>
+                        <li><a href="search.jsp">Buscar producto</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">

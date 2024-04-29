@@ -1,6 +1,6 @@
 <%-- 
-    Document   : about
-    Created on : 28 abr 2024, 5:38:47 p.m.
+    Document   : products
+    Created on : 28 abr 2024, 5:41:13 p.m.
     Author     : User
 --%>
 
@@ -15,8 +15,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>Botas Jusaino - Conócenos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Botas Jusaino - Registrar</title>
 
 
     <!-- Additional CSS Files -->
@@ -57,9 +57,10 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
+                        
                         <!-- ***** Logo Start ***** -->
                         <a href="index.jsp" class="logo">
-                            <img src="assets/images/logo BotasJusaino.png">
+                            <img src="assets/images/logo BotasJusaino.png" alt=""/>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -108,16 +109,15 @@ https://templatemo.com/tm-571-hexashop
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading about-page-heading" id="top">
+    <div class="page-heading" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Conócenos</h2>
-                        <span>Empresa con Tradición y Calidad Artesanal</span>
+                        <h2>Registra un producto</h2>
+                        <span>Rellena los campos necesarios para registrar un nuevo producto.</span>
                     </div>
                 </div>
             </div>
@@ -125,122 +125,184 @@ https://templatemo.com/tm-571-hexashop
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** About Area Starts ***** -->
-    <div class="about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="left-image">
-                        <img src="/public_html/assets/images/botasJusainoCoverBack.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="right-content">
-                        <h4>Conoce Nuestras Habilidades</h4>
-                        <span>Botas Jusaino se trata de una empresa de tradición familiar</span>
-                        <div class="quote">
-                            <i class="fa fa-quote-left"></i><p>Nos caracteriza una calidad que se puede ver y sentir.</p>
-                        </div>
-                        <p>Con más de 10 años de experiencia trabajando con productos de cuero</p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ***** About Area Ends ***** -->
 
-    <!-- ***** Our Team Area Starts ***** -->
-    <section class="our-team">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Nuestro Equipo</h2>
-                        <span>Artesanos con años de experiencia trabajando en diseños de piel con alta calidad comercial.</span>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-item">
-                        <div class="thumb">
-                            <div class="hover-effect">
-                                <div class="inner-content">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <img src="assets/images/team-member-01.jpg">
-                        </div>
-                        <div class="down-content">
-                            <h4>Mauricio Jusaino Corral</h4>
-                            <span>Dueño/Artesano</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-item">
-                        <div class="thumb">
-                            <div class="hover-effect">
-                                <div class="inner-content">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <img src="assets/images/team-member-03.jpg">
-                        </div>
-                        <div class="down-content">
-                            <h4>Mario Jusaino Corral</h4>
-                            <span>Dueño/Artesano</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Our Team Area Ends ***** -->
+    <!-- ***** Products Area Starts ***** -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-    <!-- ***** Services Area Starts ***** -->
-    <section class="our-services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Nuestros Servicios</h2>
-                        <span>En Botas Jusaino nos caracteriza una calidad artesanal excepcional</span>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item">
-                        <h4>Productos de Alta Calidad</h4>
-                        <p>En Botas Jusaino Producimos productos de piel de excelente calidad con diseños originales del norte de México</p>
-                        <img src="assets/images/service-01.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item">
-                        <h4>Hacemos diseños a Tu medida</h4>
-                        <p>En Botas Jusaino podemos hacer una realidad el diseño que tanto desees a tu medida, hemos personalizado desde calzdo a medida hasta accesorios personalizados</p>
-                        <img src="assets/images/service-02.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Services Area Ends ***** -->
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ffcc00;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 100px;
+            margin-right: 100px;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff6600;
+        }
+        .search-cart {
+            display: flex;
+            align-items: center;
+        }
+        .search-cart input {
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .search-cart .icon {
+            margin-left: 10px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .search-cart .icon:hover {
+            color: #ff6600;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .product-form {
+            display: flex;
+            align-items: flex-start;
+        }
+        .product-image {
+            border: 1px dashed #ccc;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .product-image input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        .product-details {
+            margin-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+        .product-details input,
+        .product-details select,
+        .product-details textarea {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            width: 100%;
+        }
+        .color-size {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .color-size select {
+            width: 48%;
+        }
+        button {
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e65c00;
+        }
+        .quantity {
+            margin-top: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
 
-   <!-- ***** Footer Start ***** -->
+    <main>
+        <section class="product-form">
+            <div class="product-image">
+                <img src="placeholder.jpg" alt="Imagen del producto">
+                <input type="file" id="product-image-input" accept="image/*" name="ImagenProducto">
+                <label for="product-image-input"></label>
+            </div>
+            <div class="product-details">
+                <input type="text" placeholder="CODIGO DE BARRAS" name="CodigoBarras">
+                <select>
+                    <option value="">CATEGORIA</option>
+                </select>
+                 <select>
+                    <option value="">MARCA</option>
+                </select>
+                <select>
+                    <option value="">MATERIAL</option>
+                </select>
+                <input type="text" placeholder="NOMBRE" name="Nombre">
+                <textarea placeholder="DESCRIPCIÓN" rows="4"></textarea>
+                <div class="color-size">
+                    <select>
+                        <option value="">COLOR</option>
+                    </select>
+                    <select>
+                        <option value="">TALLA</option>
+                    </select>
+                <input type="text" placeholder="PRECIO" name="Precio">
+                </div>
+                <button>GUARDAR</button>
+            </div>
+        </section>
+    </main>
+    <!-- ***** Products Area Ends ***** -->
+    
+       <!-- ***** Footer Start ***** -->
  <footer>
         <div class="container">
             <div class="row">

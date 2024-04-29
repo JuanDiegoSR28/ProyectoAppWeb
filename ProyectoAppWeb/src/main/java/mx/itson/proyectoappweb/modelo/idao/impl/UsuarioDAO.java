@@ -20,7 +20,6 @@ public class UsuarioDAO implements IUsuarioDAO {
 
     @Override
     public Usuario crearUsuario(Usuario usuario) {
-
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
@@ -28,14 +27,15 @@ public class UsuarioDAO implements IUsuarioDAO {
             entityManager.getTransaction().commit();
             return usuario;
         } catch (PersistenceException e) {
-            entityManager.getTransaction().rollback();
+            if (entityManager.getTransaction().isActive()) {
+                entityManager.getTransaction().rollback();
+            }
             throw new PersistenceException("Error al crear el usuario", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
             }
         }
-
     }
 
     @Override
