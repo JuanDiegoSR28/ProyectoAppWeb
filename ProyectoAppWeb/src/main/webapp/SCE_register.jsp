@@ -49,7 +49,7 @@
                     </div>
                     <div class="field">
                         <div class="label">Número Telefónico</div>
-                        <input type="tel" id="phone" placeholder="Escribe tu Número Telefónico...">
+                        <input type="tel" id="phone" placeholder="Escribe tu Número Telefónico..." name="phone">
                     </div>
                     <div class="field buttons">
                         <button type="button" class="prev-1 prev">Anterior</button>

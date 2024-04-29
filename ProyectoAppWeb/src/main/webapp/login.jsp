@@ -22,11 +22,11 @@
 
         <form method="post">
             <div class="correo">
-                <input type="email" required placeholder="Correo eletrónico">
+                <input type="email" required placeholder="Correo eletrónico"name="email">
 
             </div>
             <div class="contraseña">
-                <input type="password" required placeholder="Contraseña">
+                <input type="password" required placeholder="Contraseña" name="password">
             </div>
             <input type="submit" value="Iniciar">
             <div class="registrarse">

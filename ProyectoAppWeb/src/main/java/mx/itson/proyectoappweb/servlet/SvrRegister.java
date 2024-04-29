@@ -7,20 +7,15 @@ package mx.itson.proyectoappweb.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author User
+ * @author Daniel Alameda
  */
-@WebServlet(name = "SrvLogin", urlPatterns = {"/login"})
-public class SrvLogin extends HttpServlet {
-
-
-
+public class SvrRegister extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -34,7 +29,7 @@ public class SrvLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
+
     }
 
     /**
@@ -48,10 +43,7 @@ public class SrvLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   
-        String email = request.getParameter("email");
-        String contrasenia = request.getParameter("password");
-        
+
     }
 
 }
