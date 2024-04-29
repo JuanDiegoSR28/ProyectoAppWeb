@@ -1,5 +1,12 @@
+<%-- 
+    Document   : productRegister
+    Created on : 28 abr 2024, 19:35:29
+    Author     : HP
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -150,15 +157,14 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">NOVEDADES</a></li>
-                <li><a href="#">NOSOTROS</a></li>
-                <li><a href="#">BOTAS</a></li>
-                <li><a href="#">PERSONALIZADOS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Hombres</a></li>
+                <li><a href="#">Muejeres</a></li>
+                <li><a href="#">Niños</a></li>
             </ul>
         </nav>
         <div class="search-cart">
-            <input type="text" placeholder="Buscar">
+            <input type="text" placeholder="Buscar" name="Buscar">
             <i class="fas fa-search icon"></i>
             <i class="fas fa-shopping-cart icon"></i>
             <i class="fas fa-user icon"></i>
@@ -168,16 +174,16 @@
         <section class="product-form">
             <div class="product-image">
                 <img src="placeholder.jpg" alt="Imagen del producto">
-                <input type="file" id="product-image-input" accept="image/*">
+                <input type="file" id="product-image-input" accept="image/*" name="ImagenProducto">
                 <label for="product-image-input">Subir imagen</label>
             </div>
             <div class="product-details">
-                <input type="text" placeholder="CODIGO DE BARRAS">
+                <input type="text" placeholder="CODIGO DE BARRAS" name="CodigoBarras">
                 <select>
                     <option value="">CATEGORIA</option>
                 </select>
-                <input type="text" placeholder="NOMBRE">
-                <textarea placeholder="DESCRIPCI�N" rows="4"></textarea>
+                <input type="text" placeholder="NOMBRE" name="Nombre">
+                <textarea placeholder="DESCRIPCIÓN" rows="4"></textarea>
                 <div class="color-size">
                     <select>
                         <option value="">COLOR</option>
@@ -186,8 +192,6 @@
                         <option value="">TALLA</option>
                     </select>
                 </div>
-                <button>CARGAR IMAGENES</button>
-                <div class="quantity">CANTIDAD</div>
                 <button>GUARDAR</button>
             </div>
         </section>
