@@ -5,7 +5,7 @@
     <artifactId>ProyectoAppWeb</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>ProyectoAppWeb-1.0</name>
+    <name>ProyectoAppWeb</name>
     
     <properties>
         <maven.compiler.source>20</maven.compiler.source>

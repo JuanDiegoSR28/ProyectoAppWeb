@@ -8,14 +8,6 @@
         <filter-name>FiltroLogueo</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <servlet>
-        <servlet-name>SvrRegister</servlet-name>
-        <servlet-class>mx.itson.proyectoappweb.servlet.SrvRegister</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SvrRegister</servlet-name>
-        <url-pattern>/SvrRegister</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

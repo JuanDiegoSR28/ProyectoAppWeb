@@ -37,6 +37,12 @@ prevBtnFifth.addEventListener("click", function () {
 });
 
 submitBtn.addEventListener("click", function () {
+    document.querySelector("form").submit();
+});
+
+/*
+
+submitBtn.addEventListener("click", function () {
 
     console.log("Click en el botón de Registrar");
     // Extraer los valores del formulario
@@ -91,6 +97,7 @@ submitBtn.addEventListener("click", function () {
 
 
     // Enviar los datos a través de una solicitud fetch
+    /*
     fetch('http://localhost:8081/api/user/register', {
         method: 'POST',
         headers: {
@@ -110,7 +117,11 @@ submitBtn.addEventListener("click", function () {
             console.error('Error al enviar los datos:', error);
             // Manejar el error
         });
+     * 
+    
 });
+
+ */
 
 function success() {
     if (document.getElementById("textsend").value !== "" && document.getElementById("phone").value !== "") {

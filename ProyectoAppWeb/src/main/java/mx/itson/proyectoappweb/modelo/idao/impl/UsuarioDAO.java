@@ -10,18 +10,17 @@ import mx.itson.proyectoappweb.controlador.IConexionBD;
 import mx.itson.proyectoappweb.modelo.dominio.Usuario;
 import mx.itson.proyectoappweb.modelo.idao.IUsuarioDAO;
 
-public class UsuarioDAO implements IUsuarioDAO{
-    
+public class UsuarioDAO implements IUsuarioDAO {
+
     private EntityManagerFactory entityManagerFactory;
 
-    public UsuarioDAO(IConexionBD conexionBD){
+    public UsuarioDAO(IConexionBD conexionBD) {
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
-    
 
     @Override
     public Usuario crearUsuario(Usuario usuario) {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
@@ -36,12 +35,12 @@ public class UsuarioDAO implements IUsuarioDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public boolean actualizarUsuario(Usuario usuario) {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
@@ -56,13 +55,13 @@ public class UsuarioDAO implements IUsuarioDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public Usuario consultarUsuarioID(Long id) {
-        
-         EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             Usuario usuario = entityManager.find(Usuario.class, id);
             if (usuario == null) {
@@ -74,13 +73,13 @@ public class UsuarioDAO implements IUsuarioDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public boolean eliminarUsuario(Usuario usuario) {
-        
-         EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
             entityManager.remove(entityManager.contains(usuario) ? usuario : entityManager.merge(usuario));
@@ -94,12 +93,12 @@ public class UsuarioDAO implements IUsuarioDAO{
                 entityManager.close();
             }
         }
-        
+
     }
 
     @Override
     public List<Usuario> obtenerTodosUsuario() {
-        
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             return entityManager.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
@@ -110,7 +109,7 @@ public class UsuarioDAO implements IUsuarioDAO{
                 entityManager.close();
             }
         }
-        
+
     }
-    
+
 }

@@ -4,23 +4,27 @@
  */
 package mx.itson.proyectoappweb.servlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import mx.itson.proyectoappweb.modelo.dominio.Usuario;
+import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
 
 /**
  *
- * @author User
+ * @author Daniel Alameda
  */
-@WebServlet(name = "SrvLogin", urlPatterns = {"/login"})
+@WebServlet(name = "SrvLogin", urlPatterns = {"/SrvLogin"})
 public class SrvLogin extends HttpServlet {
 
-
-
+    private FabricaDAO fabricaDAO = new FabricaDAO();
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -34,7 +38,7 @@ public class SrvLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
+
     }
 
     /**
@@ -48,10 +52,27 @@ public class SrvLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   
+
         String email = request.getParameter("email");
         String contrasenia = request.getParameter("password");
-        
-    }
 
+        List<Usuario> usuarios = fabricaDAO.crearUsuarioDAO().obtenerTodosUsuario();
+        Usuario usuarioBuscado = null;
+        for (Usuario usuario : usuarios) {
+            if (usuario.getCredencial().getCorreo().equals(email) && usuario.getCredencial().getContrasenia().equals(contrasenia)) {
+
+                usuarioBuscado = usuario;
+            }
+        }
+
+        if (usuarioBuscado != null) {
+
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("usuario", usuarioBuscado);
+
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
+
+        }
+
+    }
 }

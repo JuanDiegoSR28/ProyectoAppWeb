@@ -41,7 +41,7 @@ public class FiltroLogueo implements Filter {
     public void destroy() {
     }
     private final static String[] pathsPublicos = {
-        "login.jsp", "SCE_register.jsp", "assets", "scripts", "SrvRegister", "SrvLogin"};
+        "login.jsp", "SCE_register.jsp", "assets", "scripts", "SrvRegister", "SrvLogin", "SvrRegister"};
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

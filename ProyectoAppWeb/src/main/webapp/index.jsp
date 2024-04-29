@@ -4,9 +4,9 @@
     Author     : User
 --%>
 
-<%@page contentType="text/jsp" pageEncoding="UTF-8"%>
-<!DOCTYPE jsp>
-<jsp lang="es">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="es">
 
   <head>
 
