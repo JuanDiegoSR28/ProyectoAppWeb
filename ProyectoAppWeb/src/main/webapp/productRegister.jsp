@@ -182,6 +182,12 @@
                 <select>
                     <option value="">CATEGORIA</option>
                 </select>
+                 <select>
+                    <option value="">MARCA</option>
+                </select>
+                <select>
+                    <option value="">MATERIAL</option>
+                </select>
                 <input type="text" placeholder="NOMBRE" name="Nombre">
                 <textarea placeholder="DESCRIPCIÓN" rows="4"></textarea>
                 <div class="color-size">
@@ -191,6 +197,7 @@
                     <select>
                         <option value="">TALLA</option>
                     </select>
+                <input type="text" placeholder="PRECIO" name="Precio">
                 </div>
                 <button>GUARDAR</button>
             </div>
