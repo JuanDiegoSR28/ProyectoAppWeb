@@ -124,7 +124,7 @@ https://templatemo.com/tm-571-hexashop
                                     <a href="#">¡Compra ya!</a>
                                 </div>
                             </div>
-                            <img src="/public_jsp/assets/images/coverBotasJusaino.jpg" alt="">
+                            <img src="assets/images/botasJusainoCoverBack.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -245,7 +245,7 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_jsp/assets/images/botas01.jpg" alt="">
+                                    <img src="assets/images/botas01.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas para Hombre</h4>
@@ -262,7 +262,7 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_jsp/assets/images/botas02.jpg" alt="">
+                                    <img src="assets/images/botas02.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas para Baile</h4>
@@ -338,7 +338,7 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_jsp/assets/images/botas05.jpg" alt="">
+                                    <img src="assets/images/botas05.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas Para Mujer</h4>
@@ -354,7 +354,7 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="single-product.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="/public_jsp/assets/images/botas04.jpg" alt="">
+                                    <img src="assets/images/botas04.jpg" alt="">
                                 </div>
                                 <div class="down-content">
                                     <h4>Botas de Baile para Mujeres</h4>
