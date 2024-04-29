@@ -18,7 +18,7 @@ public class Producto_TallaDAO implements IProducto_TallaDAO {
 
     private EntityManagerFactory entityManagerFactory;
 
-    public Producto_TallaDAO(IConexionBD conexionBD) throws SQLException {
+    public Producto_TallaDAO(IConexionBD conexionBD){
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 

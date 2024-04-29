@@ -14,7 +14,7 @@ public class CredencialDAO implements ICredencialDAO {
 
     private EntityManagerFactory entityManagerFactory;
 
-    public CredencialDAO(IConexionBD conexionBD) throws SQLException {
+    public CredencialDAO(IConexionBD conexionBD){
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 

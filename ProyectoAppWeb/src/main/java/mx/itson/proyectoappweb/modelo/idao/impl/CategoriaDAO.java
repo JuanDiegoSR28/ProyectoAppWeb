@@ -18,7 +18,7 @@ public class CategoriaDAO implements ICategoriaDAO {
 
     private EntityManagerFactory entityManagerFactory;
 
-    public CategoriaDAO(IConexionBD conexionBD) throws SQLException {
+    public CategoriaDAO(IConexionBD conexionBD){
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 

@@ -14,7 +14,7 @@ public class DireccionDAO implements IDireccionDAO{
     
     private EntityManagerFactory entityManagerFactory;
 
-    public DireccionDAO(IConexionBD conexionBD) throws SQLException {
+    public DireccionDAO(IConexionBD conexionBD){
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 

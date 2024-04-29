@@ -19,7 +19,7 @@ public class ProductoDAO implements IProductoDAO {
 
     private EntityManagerFactory entityManagerFactory;
 
-    public ProductoDAO(IConexionBD conexionBD) throws SQLException {
+    public ProductoDAO(IConexionBD conexionBD){
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 

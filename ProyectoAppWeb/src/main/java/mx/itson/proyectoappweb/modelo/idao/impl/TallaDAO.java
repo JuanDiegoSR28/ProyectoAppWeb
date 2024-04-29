@@ -19,7 +19,7 @@ public class TallaDAO implements ITallaDAO {
 
     private EntityManagerFactory entityManagerFactory;
 
-    public TallaDAO(IConexionBD conexionBD)  {
+    public TallaDAO(IConexionBD conexionBD){
         this.entityManagerFactory = conexionBD.useConnectionMysql();
     }
 
