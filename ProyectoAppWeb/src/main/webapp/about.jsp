@@ -239,14 +239,14 @@ https://templatemo.com/tm-571-hexashop
     </section>
     <!-- ***** Services Area Ends ***** -->
 
-     <!-- ***** Footer Start ***** -->
-     <footer>
+   <!-- ***** Footer Start ***** -->
+ <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="first-item">
                         <div class="logo">
-                            <img src="/public_html/assets/images/logoBaseBotasJusaino.jpg" alt="hexashop ecommerce templatemo">
+                            <img src="assets/images/logoBaseBotasJusaino.jpg" alt=""/>
                         </div>
                         <ul>
                             <li><a href="#">Ciudad Obregón, Sonora, MX</a></li>
@@ -266,17 +266,15 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-3">
                     <h4>Enlaces Útiles</h4>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Conócenos</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="index.jsp">Inicio</a></li>
+                        <li><a href="about.jsp">Conócenos</a></li>
+                        <li><a href="contact.jsp">Contactanos</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
                     <h4>Ayuda e Informaciónn</h4>
                     <ul>
                         <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Preguntas Frecuentes</a></li>
 
                     <!-- 
                         <li><a href="#">Shipping</a></li>

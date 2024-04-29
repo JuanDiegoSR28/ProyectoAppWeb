@@ -170,61 +170,7 @@ https://templatemo.com/tm-571-hexashop
     </div>
     <!-- ***** Contact Area Ends ***** -->
 
-    <!-- ***** Subscribe Area Starts ***** -->
-
-    
-    <div class="subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="section-heading">
-                        <h2>Suscríbete para recibir noticias sobre la tienda y ofertas disponibles.</h2>
-                        <span>Ingresa tu correo electrónico para notificarte sobre lo más nuevo referente a Botas Jusaino.</span>
-                    </div>
-                    <form id="subscribe" action="" method="get">
-                        <div class="row">
-                          <div class="col-lg-5">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Tu nombre" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-5">
-                            <fieldset>
-                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Tu correo electrónico" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-2">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
-                            </fieldset>
-                          </div>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="col-6">
-                            <ul>
-                                <li>Dirección de la tienda:<br><span>BOULEVARD RAMIREZ 503 COL. CONSTITUCION 85170 Ciudad Obregón, Sonora, Mexico</span></li>
-                                <li>Teléfono:<br><span>644 279 7185</span></li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <ul>
-                                <li>Horario laboral:<br><span>09:00 AM - 7:30 PM. Todos los días.</span></li>
-                                <li>Correo electrónico:<br><span>jusainobotas@hotmail.com</span></li>
-                                <li>Redes sociales:<br><span><a href="https://www.facebook.com/botasjusaino.19/">Facebook</a>, <a href="https://www.tiktok.com/@botas.jusaino3">TikTok</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Subscribe Area Ends ***** -->
-
-    <!-- ***** Footer Start ***** -->
+   <!-- ***** Footer Start ***** -->
  <footer>
         <div class="container">
             <div class="row">
@@ -251,17 +197,15 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-3">
                     <h4>Enlaces Útiles</h4>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Conócenos</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="index.jsp">Inicio</a></li>
+                        <li><a href="about.jsp">Conócenos</a></li>
+                        <li><a href="contact.jsp">Contactanos</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
                     <h4>Ayuda e Informaciónn</h4>
                     <ul>
                         <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Preguntas Frecuentes</a></li>
 
                     <!-- 
                         <li><a href="#">Shipping</a></li>
