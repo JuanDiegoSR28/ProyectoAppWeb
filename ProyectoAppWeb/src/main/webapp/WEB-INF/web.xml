@@ -8,6 +8,22 @@
         <filter-name>FiltroLogueo</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <servlet>
+        <servlet-name>SrvDelete</servlet-name>
+        <servlet-class>mx.itson.proyectoappweb.servlet.SrvDelete</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SrvUpdate</servlet-name>
+        <servlet-class>mx.itson.proyectoappweb.servlet.SrvUpdate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SrvDelete</servlet-name>
+        <url-pattern>/SrvDelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SrvUpdate</servlet-name>
+        <url-pattern>/SrvUpdate</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

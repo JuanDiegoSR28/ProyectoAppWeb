@@ -413,7 +413,7 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h2>Último para Niños</h2>
-                        <span>Cono ce las novedades para niños.</span>
+                        <span>Conoce las novedades para niños.</span>
                     </div>
                 </div>
             </div>
