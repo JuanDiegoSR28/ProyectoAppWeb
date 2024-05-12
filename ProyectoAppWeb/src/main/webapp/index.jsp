@@ -1,12 +1,32 @@
 <%-- 
     Document   : index
-    Created on : 28 abr 2024, 5:35:28 p.m.
+    Created on : 28 abr 2024, 5:35:28?p.m.
     Author     : User
 --%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="jakarta.servlet.http.HttpServletRequest" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    
+    // Obtener el objeto HttpServletRequest
+    HttpServletRequest requestObj = (HttpServletRequest) pageContext.getRequest();
+    
+    // Obtener la sesión
+    HttpSession sessionObj = requestObj.getSession();
+    
+    // Obtener información del usuario logueado
+    String username = (String) sessionObj.getAttribute("nombreUsuario"); // Suponiendo que guardas el nombre de usuario en la sesión
+    
+    String userType = (String) sessionObj.getAttribute("tipo_usuario");
+
+    
+
+%>
 <!DOCTYPE html>
 <html lang="es">
+    
 
   <head>
 
@@ -69,7 +89,9 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="#men">Hombres</a></li>
                             <li class="scroll-to-section"><a href="#women">Mujeres</a></li>
                             <li class="scroll-to-section"><a href="#kids">Niños</a></li>
-                            
+                            <% if ("ENCARGADO".equals(userType)) { %>
+                            <li class="scroll-to-section"><a href="dashboard.jsp">Admin Dashboard</a></li>
+                            <% } %>
                             <li class="submenu">
                                 <a href="javascript:;">Más</a>
                                 <ul>
@@ -77,7 +99,6 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a href="products.jsp">Productos</a></li>
                                     <!--<li><a href="single-product.jsp">Producto a Detalle</a></li>-->
                                     <li><a href="contact.jsp">Contáctanos</a></li>
-                                    <li><a href="productRegister.jsp">Registrar producto</a></li>
                                 </ul>
                             </li>
 
@@ -413,7 +434,10 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h2>Último para Niños</h2>
+                        <span>Conoce las novedades para niños.</span>
+                        <h2>Último para Niños</h2>
                         <span>Cono ce las novedades para niños.</span>
+
                     </div>
                 </div>
             </div>
@@ -652,4 +676,3 @@ https://templatemo.com/tm-571-hexashop
     </script>
 
   </body>
-</jsp>

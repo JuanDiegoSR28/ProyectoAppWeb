@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package mx.itson.proyectoappweb.servlet;
 
 import jakarta.servlet.ServletException;
@@ -14,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import mx.itson.proyectoappweb.modelo.dominio.TipoUsuario;
 import mx.itson.proyectoappweb.modelo.dominio.Usuario;
 import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
 
@@ -67,10 +64,20 @@ public class SrvLogin extends HttpServlet {
 
         if (usuarioBuscado != null) {
 
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("usuario", usuarioBuscado);
+            if (usuarioBuscado.getTipo_usuario() == TipoUsuario.ENCARGADO) {
+                HttpSession sesion = request.getSession();
+                sesion.setAttribute("usuario", usuarioBuscado);
+                sesion.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
+                sesion.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
+                response.sendRedirect(request.getContextPath() + "/about.jsp");
+            } else {
 
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+                HttpSession sesion = request.getSession();
+                sesion.setAttribute("usuario", usuarioBuscado);
+                sesion.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
+                sesion.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
 
         }
 
