@@ -1,4 +1,3 @@
-
 package mx.itson.proyectoappweb.servlet;
 
 import java.io.IOException;
@@ -106,7 +105,8 @@ public class SrvRegister extends HttpServlet {
 
             HttpSession sesion = request.getSession();
             sesion.setAttribute("usuario", usuarioEnc);
-
+            sesion.setAttribute("nombreUsuario", usuarioEnc.getNombres() + " " + usuarioEnc.getApellido_paterno());
+            sesion.setAttribute("tipo_usuario", usuarioEnc.getTipo_usuario().toString());
             response.sendRedirect(request.getContextPath() + "/index.jsp");
 
         }

@@ -5,6 +5,26 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="jakarta.servlet.http.HttpServletRequest" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
+
+
+<%
+    
+    // Obtener el objeto HttpServletRequest
+    HttpServletRequest requestObj = (HttpServletRequest) pageContext.getRequest();
+    
+    // Obtener la sesión
+    HttpSession sessionObj = requestObj.getSession();
+    
+    // Obtener información del usuario logueado
+    String username = (String) sessionObj.getAttribute("nombreUsuario"); // Suponiendo que guardas el nombre de usuario en la sesión
+    
+    String userType = (String) sessionObj.getAttribute("tipo_usuario");
+
+    
+
+%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -68,6 +88,9 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="#men">Hombres</a></li>
                             <li class="scroll-to-section"><a href="#women">Mujeres</a></li>
                             <li class="scroll-to-section"><a href="#kids">Niños</a></li>
+                            <% if ("ENCARGADO".equals(userType)) { %>
+                            <li class="scroll-to-section"><a href="dashboard.jsp">Admin Dashboard</a></li>
+                            <% } %>                            
                             
                             <li class="submenu">
                                 <a href="javascript:;">Más</a>
@@ -76,7 +99,6 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a href="products.jsp">Productos</a></li>
                                     <!--<li><a href="single-product.html">Producto a Detalle</a></li>-->
                                     <li><a href="contact.jsp">Contáctanos</a></li>
-                                    <li><a href="productRegister.jsp">Registrar producto</a></li>
                                 </ul>
                             </li>
 

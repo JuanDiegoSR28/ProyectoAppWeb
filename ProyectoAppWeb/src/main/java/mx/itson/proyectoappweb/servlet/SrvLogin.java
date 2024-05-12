@@ -1,4 +1,3 @@
-
 package mx.itson.proyectoappweb.servlet;
 
 import jakarta.servlet.ServletException;
@@ -59,30 +58,26 @@ public class SrvLogin extends HttpServlet {
         for (Usuario usuario : usuarios) {
             if (usuario.getCredencial().getCorreo().equals(email) && usuario.getCredencial().getContrasenia().equals(contrasenia)) {
 
-                
                 usuarioBuscado = usuario;
             }
         }
 
         if (usuarioBuscado != null) {
 
-            if(usuarioBuscado.getTipo_usuario()==TipoUsuario.ENCARGADO)
-            {
+            if (usuarioBuscado.getTipo_usuario() == TipoUsuario.ENCARGADO) {
                 HttpSession sesion = request.getSession();
                 sesion.setAttribute("usuario", usuarioBuscado);
-    
+                sesion.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
+                sesion.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
                 response.sendRedirect(request.getContextPath() + "/about.jsp");
-            }
-
-            else
-            {
+            } else {
 
                 HttpSession sesion = request.getSession();
                 sesion.setAttribute("usuario", usuarioBuscado);
-    
+                sesion.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
+                sesion.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
                 response.sendRedirect(request.getContextPath() + "/index.jsp");
             }
-            
 
         }
 
