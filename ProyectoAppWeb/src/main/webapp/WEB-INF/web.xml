@@ -20,6 +20,10 @@
         <servlet-name>SrvSearchUser</servlet-name>
         <servlet-class>mx.itson.proyectoappweb.servlet.SrvSearchUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SrvAddUser</servlet-name>
+        <servlet-class>mx.itson.proyectoappweb.servlet.SrvAddUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SrvDelete</servlet-name>
         <url-pattern>/SrvDelete</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>SrvSearchUser</servlet-name>
         <url-pattern>/SrvSearchUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SrvAddUser</servlet-name>
+        <url-pattern>/SrvAddUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

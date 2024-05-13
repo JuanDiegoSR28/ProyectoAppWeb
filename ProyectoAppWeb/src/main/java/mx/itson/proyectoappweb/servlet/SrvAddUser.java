@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package mx.itson.proyectoappweb.servlet;
 
 import jakarta.servlet.ServletException;
@@ -26,7 +30,7 @@ import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
  *
  * @author PC
  */
-public class SrvUpdate extends HttpServlet {
+public class SrvAddUser extends HttpServlet {
 
     FabricaDAO fabricaDAO = new FabricaDAO();
 
@@ -93,19 +97,16 @@ public class SrvUpdate extends HttpServlet {
         List<Direccion> direcciones = new ArrayList<>();
         List<Usuario> usuarios = fabricaDAO.crearUsuarioDAO().obtenerTodosUsuario();
         List<Producto> productos = fabricaDAO.crearProductoDAO().obtenerTodosProductos();
-
         Usuario usuario = new Usuario(nombre, apellidoPaterno,
                 apellidoMaterno, numeroTelefonico, fechaJava,
                 generoRegistro, TipoUsuario.CLIENTE, new Credencial(email, contrasenya));
         direcciones.add(new Direccion(calle, numero, colonia, ciudad, estado, codigoPostal, usuario));
-
-        Boolean respuestaUsuario = fabricaDAO.crearUsuarioDAO().actualizarUsuario(usuario);
+        Usuario usuarioEnc = fabricaDAO.crearUsuarioDAO().crearUsuario(usuario);
         Usuario usuarioBase;
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("usuario", respuestaUsuario);
         usuarioBase = (Usuario) sesion.getAttribute("usuario");
-        if (respuestaUsuario == true) {
 
+        if (usuarioEnc != null) {
             if (usuarioBase != null) {
 
                 if (usuarioBase.getTipo_usuario() == TipoUsuario.ENCARGADO) {
@@ -134,15 +135,5 @@ public class SrvUpdate extends HttpServlet {
         }
 
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

@@ -164,6 +164,7 @@
                     <ul>
                         <li><a id="updateUserLink" onclick="hideUpdateUserContent()">Actualizar Usuario</a></li>
                         <li><a id="deleteUserLink" onclick="hideUpdateUserContent()">Eliminar Usuario</a></li>
+                        <li><a href="addUser.jsp">Agregar Usuario</a></li>
                     </ul>
                 </div>
                 <div class="section">
