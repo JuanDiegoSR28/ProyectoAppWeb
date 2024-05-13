@@ -1,7 +1,10 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package mx.itson.proyectoappweb.servlet;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,18 +12,14 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import mx.itson.proyectoappweb.modelo.dominio.Producto;
-
-import mx.itson.proyectoappweb.modelo.dominio.TipoUsuario;
 import mx.itson.proyectoappweb.modelo.dominio.Usuario;
 import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
 
 /**
  *
- * @author Daniel Alameda
+ * @author PC
  */
-@WebServlet(name = "SrvLogin", urlPatterns = {"/SrvLogin"})
-public class SrvLogin extends HttpServlet {
+public class SrvSearchUser extends HttpServlet {
 
     private FabricaDAO fabricaDAO = new FabricaDAO();
 
@@ -51,39 +50,30 @@ public class SrvLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String email = request.getParameter("email");
-        String contrasenia = request.getParameter("password");
-
+        String userId = request.getParameter("idPrueba");
+        Long idUser = Long.valueOf(userId);
+        
         List<Usuario> usuarios = fabricaDAO.crearUsuarioDAO().obtenerTodosUsuario();
-        List<Producto> productos = fabricaDAO.crearProductoDAO().obtenerTodosProductos();
         Usuario usuarioBuscado = null;
         for (Usuario usuario : usuarios) {
-            if (usuario.getCredencial().getCorreo().equals(email) && usuario.getCredencial().getContrasenia().equals(contrasenia)) {
-
+            if (usuario.getId_usuario().equals(idUser)) {
                 usuarioBuscado = usuario;
             }
         }
 
         if (usuarioBuscado != null) {
-
-            if (usuarioBuscado.getTipo_usuario() == TipoUsuario.ENCARGADO) {
-
-                request.setAttribute("usuario", usuarioBuscado);
-                request.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
-                request.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
-                request.setAttribute("listaUsuarios", usuarios);
-                request.setAttribute("listaProductos", productos);
-                request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
-            } else {
-
-                HttpSession sesion = request.getSession();
-                sesion.setAttribute("usuario", usuarioBuscado);
-                sesion.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
-                sesion.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
-                response.sendRedirect(request.getContextPath() + "/index.jsp");
-            }
-
+            
+            Integer idToInt = Math.toIntExact(usuarioBuscado.getId_usuario());
+            request.setAttribute("idObtained", idToInt );
+            HttpSession sesion = request.getSession();
+            response.sendRedirect(request.getContextPath() + "/adminDashboard.jsp");
         }
-
+        else
+        {
+            request.setAttribute("userObtained", usuarioBuscado);
+            HttpSession sesion = request.getSession();
+            response.sendRedirect(request.getContextPath() + "/products.jsp");
+        }
     }
+
 }
