@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import mx.itson.proyectoappweb.modelo.dominio.Producto;
 
+
 import mx.itson.proyectoappweb.modelo.dominio.TipoUsuario;
 import mx.itson.proyectoappweb.modelo.dominio.Usuario;
 import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
@@ -68,19 +69,26 @@ public class SrvLogin extends HttpServlet {
 
             if (usuarioBuscado.getTipo_usuario() == TipoUsuario.ENCARGADO) {
 
+                HttpSession session = request.getSession();
+                session.setAttribute("usuario", usuarioBuscado);
+                session.setAttribute("nombreUsuarioSesion", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
+                session.setAttribute("tipo_usuarioSesion", usuarioBuscado.getTipo_usuario().toString());
+                
+                
                 request.setAttribute("usuario", usuarioBuscado);
                 request.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
                 request.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
                 request.setAttribute("listaUsuarios", usuarios);
                 request.setAttribute("listaProductos", productos);
                 request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
+
             } else {
 
                 HttpSession sesion = request.getSession();
                 sesion.setAttribute("usuario", usuarioBuscado);
                 sesion.setAttribute("nombreUsuario", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
                 sesion.setAttribute("tipo_usuario", usuarioBuscado.getTipo_usuario().toString());
-                response.sendRedirect(request.getContextPath() + "/index.jsp");
+                response.sendRedirect(request.getContextPath() + "/updateUser.jsp");
             }
 
         }

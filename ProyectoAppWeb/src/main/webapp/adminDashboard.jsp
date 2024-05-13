@@ -9,17 +9,13 @@
 
 <%
     
-    // Obtener el objeto HttpServletRequest
-    HttpServletRequest requestObj = (HttpServletRequest) pageContext.getRequest();
-    
-    // Obtener la sesión
-    HttpSession sessionObj = requestObj.getSession();
+
  
     
     // Obtener información del usuario logueado
-    String username = (String) sessionObj.getAttribute("nombreUsuario"); // Suponiendo que guardas el nombre de usuario en la sesión
+    String username = (String) session.getAttribute("nombreUsuarioSesion"); 
     
-    String userType = (String) sessionObj.getAttribute("tipo_usuario");
+    String userType = (String) session.getAttribute("tipo_usuarioSesion");
     
 
 
@@ -190,18 +186,7 @@
                         <input type="text" placeholder="Escribe el ID del usuario" name="idPrueba">
                         <br>
                         <br>
-                        <input type="submit" value="Buscar usuario" id="submitBtn">
-                        <%-- Mostrar los datos del usuario si están disponibles --%>
-                        <% if (sessionObj.getAttribute("userObtained") != null) { %>
-                        <h3>Datos del Usuario</h3>
-                        <form>
-                            Nombre: <input type="text" name="nombre" value=""><br>
-                            Email: <input type="text" name="email" value=""><br>
-                            <!-- Otros campos del usuario -->
-                            <input type="hidden" name="userId" value="">
-                            <input type="submit" value="Actualizar">
-                        </form>
-                        <% } %>    
+                        <input type="submit" value="Buscar usuario" id="submitBtn">  
                     </div>            
                 </form>
 
@@ -253,7 +238,8 @@
                 </div>
 
 
-                <div id="updateUserContent" class="content-section">
+
+                <div id="inicial" class="content-section">
                     <h2>Usuarios registrados:</h2>
                     <table border="1 ">
                         <thead>
@@ -297,11 +283,54 @@
 
                         </tbody>
                     </table>
-                    
-                </div>
-                            
+                    <h2>Productos registrados:</h2>
+                    <table border="1 ">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Código</th>
+                                <th>Color</th>
+                                <th>Descripción</th>
+                                <th>Marca</th>
+                                <th>Material</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%List<Producto> listaProductos = (List<Producto>) request.getAttribute("listaProductos");
+                                 if(listaProductos != null)
+                                 {
+                                 for(Producto producto: listaProductos){
+                                 
+                            %>
+                            <tr>
+                                <td><%= producto.getId_producto() %></td>
+                                <td><%= producto.getCodigo() %></td>
+                                <td><%= producto.getColor() %></td>
+                                <td><%= producto.getDescrpcion() %></td>
+                                <td><%= producto.getMarca() %></td>
+                                <td><%= producto.getMaterial() %></td>
+                                <td><%= producto.getNombre() %></td>
+                                <td><%= producto.getPrecio() %></td>
 
-                                            
+
+                            </tr>
+                            <% 
+                                }
+                            } else {
+                            %>
+                            <tr>
+                                <td colspan="3">No hay productos para mostrar.</td>
+                            </tr>
+                            <% } %>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
             </section>
 
         </main>
@@ -331,7 +360,7 @@
         <script>
             // Función para ocultar el div principal
             function hideUpdateUserContent() {
-                var updateUserContent = document.getElementById('updateUserContent');
+                var updateUserContent = document.getElementById('inicial');
                 updateUserContent.style.display = 'none';
             }
         </script>
