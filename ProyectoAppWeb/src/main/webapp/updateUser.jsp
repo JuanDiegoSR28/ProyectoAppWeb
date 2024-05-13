@@ -268,140 +268,143 @@
 <body>
 
     <main>
-        <section class="product-form">
-            <div class="product-details">
-                <input type="text" placeholder="APELLIDO PATERNO" name="CodigoBarras">
-                <input type="text" placeholder="APELLIDO MATERNO" name="CodigoBarras">
-                <input type="date" name="fechanacimiento">
+        <form action="/ProyectoAppWeb/SrvRegister" method="POST">
+            <section class="product-form">
+                <div class="product-details">
+                    <input type="text" value=<%= request.getAttribute("apellidoP")%>  name="apellidopaterno">
+                    <input type="text" value=<%= request.getAttribute("apellidoM")%>  name="apellidomaterno">
+                    <input type="date" name="fechanacimiento">
 
-                <h6>GÉNERO</h6> 
-                <select>
+                    <h6>GÉNERO</h6> 
+                    <select name="genero">
 
-                    <option value="">MASCULINO</option>
-                    <option value="">FEMENINO</option>
-                </select>
-                <input type="text" placeholder="NOMBRE(S)" name="CodigoBarras">
-                <input type="text" placeholder="TELÉFONO" name="CodigoBarras">
-                <input type="text" placeholder="CORREO ELECTRÓNICO" name="CodigoBarras">
-                <input type="text" placeholder="CONTRASEÑA" name="CodigoBarras">
-                <input type="text" placeholder="ESTADO" name="CodigoBarras">
-                <input type="text" placeholder="CIUDAD" name="CodigoBarras">
-                <input type="text" placeholder="CÓDIGO POSTAL" name="CodigoBarras">
-                <input type="text" placeholder="COLONIA" name="CodigoBarras">
-                <input type="text" placeholder="CALLE" name="CodigoBarras">
-                <input type="text" placeholder="NÚMERO RESIDENCIA" name="CodigoBarras">
-                <button>GUARDAR</button>
-            </div>
+                        <option value="">MASCULINO</option>
+                        <option value="">FEMENINO</option>
+                    </select>
+                    <input type="text" value=<%= request.getAttribute("nombre")%> name="nombre">
+                    <input type="text" value=<%= request.getAttribute("telefono")%>  name="phone">
+                    <input type="text" value=<%= request.getAttribute("correo")%> name="textsend">
+                    <input type="text" value=<%= request.getAttribute("pass")%> name="password">
+                    <input type="text" value=<%= request.getAttribute("estado")%> name="estado">
+                    <input type="text" value=<%= request.getAttribute("ciudad")%> name="ciudad">
+                    <input type="text" value=<%= request.getAttribute("codigo")%> name="codigopostal">
+                    <input type="text" value=<%= request.getAttribute("colonia")%> name="colonia">
+                    <input type="text" value=<%= request.getAttribute("calle")%> name="calle">
+                    <input type="text" value=<%= request.getAttribute("numero")%> name="numero">
+                    <button>GUARDAR</button>
+                </div>
+
+        </form>
 
 
-            </div>
-        </section>
-    </main>
-    <!-- ***** Products Area Ends ***** -->
+    </div>
+</section>
+</main>
+<!-- ***** Products Area Ends ***** -->
 
-    <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="first-item">
-                        <div class="logo">
-                            <img src="assets/images/logoBaseBotasJusaino.jpg" alt=""/>
-                        </div>
-                        <ul>
-                            <li><a href="#">Ciudad Obregón, Sonora, MX</a></li>
-                            <li><a href="#">jusainobotas@hotmail.com</a></li>
-                            <li><a href="#">644 279 7185</a></li>
-                        </ul>
+<!-- ***** Footer Start ***** -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="first-item">
+                    <div class="logo">
+                        <img src="assets/images/logoBaseBotasJusaino.jpg" alt=""/>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <h4>Categorías de compras</h4>
                     <ul>
-                        <li><a href="#">Hombre</a></li>
-                        <li><a href="#">Mujer</a></li>
-                        <li><a href="#">Niño</a></li>
+                        <li><a href="#">Ciudad Obregón, Sonora, MX</a></li>
+                        <li><a href="#">jusainobotas@hotmail.com</a></li>
+                        <li><a href="#">644 279 7185</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
-                    <h4>Enlaces Útiles</h4>
-                    <ul>
-                        <li><a href="index.jsp">Inicio</a></li>
-                        <li><a href="about.jsp">Conócenos</a></li>
-                        <li><a href="contact.jsp">Contactanos</a></li>
-                        <li><a href="search.jsp">Buscar producto</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h4>Ayuda e Informaciónn</h4>
-                    <ul>
-                        <li><a href="#">Ayuda</a></li>
+            </div>
+            <div class="col-lg-3">
+                <h4>Categorías de compras</h4>
+                <ul>
+                    <li><a href="#">Hombre</a></li>
+                    <li><a href="#">Mujer</a></li>
+                    <li><a href="#">Niño</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h4>Enlaces Útiles</h4>
+                <ul>
+                    <li><a href="index.jsp">Inicio</a></li>
+                    <li><a href="about.jsp">Conócenos</a></li>
+                    <li><a href="contact.jsp">Contactanos</a></li>
+                    <li><a href="search.jsp">Buscar producto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h4>Ayuda e Informaciónn</h4>
+                <ul>
+                    <li><a href="#">Ayuda</a></li>
 
-                        <!-- 
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Tracking ID</a></li>
+                    <!-- 
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    -->
+                </ul>
+            </div>
+            <div class="col-lg-12">
+                <div class="under-footer">
+                    <p>Copyright © 2024 Botas Jusaino Co., Ltd. All Rights Reserved. 
+
+
+                        <!--
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
                         -->
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                     </ul>
-                </div>
-                <div class="col-lg-12">
-                    <div class="under-footer">
-                        <p>Copyright © 2024 Botas Jusaino Co., Ltd. All Rights Reserved. 
-
-
-                            <!--
-                            <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
-                            -->
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 
-    <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+<!-- jQuery -->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+<!-- Bootstrap -->
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
-    <!-- Plugins -->
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/accordions.js"></script>
-    <script src="assets/js/datepicker.js"></script>
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/slick.js"></script> 
-    <script src="assets/js/lightbox.js"></script> 
-    <script src="assets/js/isotope.js"></script> 
+<!-- Plugins -->
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/accordions.js"></script>
+<script src="assets/js/datepicker.js"></script>
+<script src="assets/js/scrollreveal.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/imgfix.min.js"></script> 
+<script src="assets/js/slick.js"></script> 
+<script src="assets/js/lightbox.js"></script> 
+<script src="assets/js/isotope.js"></script> 
 
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+<!-- Global Init -->
+<script src="assets/js/custom.js"></script>
 
-    <script>
+<script>
 
-        $(function () {
-            var selectedClass = "";
-            $("p").click(function () {
-                selectedClass = $(this).attr("data-rel");
-                $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("." + selectedClass).fadeOut();
-                setTimeout(function () {
-                    $("." + selectedClass).fadeIn();
-                    $("#portfolio").fadeTo(50, 1);
-                }, 500);
+    $(function () {
+        var selectedClass = "";
+        $("p").click(function () {
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("." + selectedClass).fadeOut();
+            setTimeout(function () {
+                $("." + selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+            }, 500);
 
-            });
         });
+    });
 
-    </script>
+</script>
 
 </body>
 

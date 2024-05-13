@@ -50,9 +50,10 @@ public class SrvSearchUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String userId = request.getParameter("idPrueba");
-        Long idUser = Long.valueOf(userId);
+        String userId = request.getParameter("idToSearch");
         
+        Long idUser = 3L;
+
         List<Usuario> usuarios = fabricaDAO.crearUsuarioDAO().obtenerTodosUsuario();
         Usuario usuarioBuscado = null;
         for (Usuario usuario : usuarios) {
@@ -62,14 +63,27 @@ public class SrvSearchUser extends HttpServlet {
         }
 
         if (usuarioBuscado != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("usuario", usuarioBuscado);
+            session.setAttribute("nombreUsuarioSesion", usuarioBuscado.getNombres() + " " + usuarioBuscado.getApellido_paterno());
+            session.setAttribute("tipo_usuarioSesion", usuarioBuscado.getTipo_usuario().toString());
             
-            Integer idToInt = Math.toIntExact(usuarioBuscado.getId_usuario());
-            request.setAttribute("idObtained", idToInt );
-            HttpSession sesion = request.getSession();
-            response.sendRedirect(request.getContextPath() + "/adminDashboard.jsp");
-        }
-        else
-        {
+            request.setAttribute("apellidoP", usuarioBuscado.getApellido_paterno());
+            request.setAttribute("apellidoM", usuarioBuscado.getApellido_materno());
+            request.setAttribute("fechaN", "2024");
+            request.setAttribute("nombre", usuarioBuscado.getNombres());
+            request.setAttribute("telefono", usuarioBuscado.getTelefono());
+            request.setAttribute("correo", usuarioBuscado.getCredencial().getCorreo());
+            request.setAttribute("pass", usuarioBuscado.getCredencial().getContrasenia());
+            request.setAttribute("estado", "");
+            request.setAttribute("ciudad", "");
+            request.setAttribute("codigo", "");
+            request.setAttribute("colonia", "");
+            request.setAttribute("calle", "");
+            request.setAttribute("numero", "");
+            request.getRequestDispatcher("updateUser.jsp").forward(request, response);
+
+        } else {
             request.setAttribute("userObtained", usuarioBuscado);
             HttpSession sesion = request.getSession();
             response.sendRedirect(request.getContextPath() + "/products.jsp");

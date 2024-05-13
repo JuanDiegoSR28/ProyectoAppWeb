@@ -183,9 +183,8 @@
 
                     <div class="table-container" id="updateUserTable">
                         <h2>Actualizar Usuario</h2>
-                        <input type="text" placeholder="Escribe el ID del usuario" name="idPrueba">
-                        <br>
-                        <br>
+                        <input type="text" placeholder="Escribe el ID del usuario" name="idToSearch">
+
                         <input type="submit" value="Buscar usuario" id="submitBtn">  
                     </div>            
                 </form>

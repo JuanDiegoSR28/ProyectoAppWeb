@@ -1,4 +1,3 @@
-
 package mx.itson.proyectoappweb.servlet;
 
 import jakarta.servlet.ServletException;
@@ -18,10 +17,10 @@ import java.util.logging.Logger;
 import mx.itson.proyectoappweb.modelo.dominio.Credencial;
 import mx.itson.proyectoappweb.modelo.dominio.Direccion;
 import mx.itson.proyectoappweb.modelo.dominio.Genero;
+import mx.itson.proyectoappweb.modelo.dominio.Producto;
 import mx.itson.proyectoappweb.modelo.dominio.TipoUsuario;
 import mx.itson.proyectoappweb.modelo.dominio.Usuario;
 import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
-
 
 /**
  *
@@ -30,7 +29,6 @@ import mx.itson.proyectoappweb.modelo.facbricadao.FabricaDAO;
 public class SrvUpdate extends HttpServlet {
 
     FabricaDAO fabricaDAO = new FabricaDAO();
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,7 +42,7 @@ public class SrvUpdate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     /**
@@ -93,22 +91,52 @@ public class SrvUpdate extends HttpServlet {
         String numero = request.getParameter("numero");
 
         List<Direccion> direcciones = new ArrayList<>();
+        List<Usuario> usuarios = fabricaDAO.crearUsuarioDAO().obtenerTodosUsuario();
+        List<Producto> productos = fabricaDAO.crearProductoDAO().obtenerTodosProductos();
+
         Usuario usuario = new Usuario(nombre, apellidoPaterno,
                 apellidoMaterno, numeroTelefonico, fechaJava,
                 generoRegistro, TipoUsuario.CLIENTE, new Credencial(email, contrasenya));
         direcciones.add(new Direccion(calle, numero, colonia, ciudad, estado, codigoPostal, usuario));
 
         Boolean respuestaUsuario = fabricaDAO.crearUsuarioDAO().actualizarUsuario(usuario);
-        
-        if(respuestaUsuario == true)
-        {
-            
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("usuario", respuestaUsuario);
+        Usuario usuarioBase;
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("usuario", respuestaUsuario);
+        usuarioBase = (Usuario) sesion.getAttribute("usuario");
+        if (respuestaUsuario == true) {
 
+            
+        if (usuarioBase != null) {
+
+            if (usuarioBase.getTipo_usuario() == TipoUsuario.ENCARGADO) {
+
+                HttpSession session = request.getSession();
+                session.setAttribute("usuario", usuarioBase);
+                session.setAttribute("nombreUsuarioSesion", usuarioBase.getNombres() + " " + usuarioBase.getApellido_paterno());
+                session.setAttribute("tipo_usuarioSesion", usuarioBase.getTipo_usuario().toString());
+                
+                
+                request.setAttribute("usuario", usuarioBase);
+                request.setAttribute("nombreUsuario", usuarioBase.getNombres() + " " + usuarioBase.getApellido_paterno());
+                request.setAttribute("tipo_usuario", usuarioBase.getTipo_usuario().toString());
+                request.setAttribute("listaUsuarios", usuarios);
+                request.setAttribute("listaProductos", productos);
+                request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
+
+            } else {
+
+               
+                sesion.setAttribute("usuario", usuarioBase);
+                sesion.setAttribute("nombreUsuario", usuarioBase.getNombres() + " " + usuarioBase.getApellido_paterno());
+                sesion.setAttribute("tipo_usuario", usuarioBase.getTipo_usuario().toString());
+                response.sendRedirect(request.getContextPath() + "/updateUser.jsp");
+            }
+
+        }
             response.sendRedirect(request.getContextPath() + "/index.jsp");
         }
-        
+
     }
 
     /**
